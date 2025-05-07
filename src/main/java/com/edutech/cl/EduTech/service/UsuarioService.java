@@ -16,9 +16,11 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+
     public List<Usuario> findAll(){
         return usuarioRepository.findAll();
     }
+
 
     public Usuario findById(long id){
         return usuarioRepository.findById(id).get();
@@ -31,4 +33,15 @@ public class UsuarioService {
     public void delete(Long id){
         usuarioRepository.deleteById(id);
     }
+
+    public List<Usuario> findByRol(String rol) {
+        return usuarioRepository.findByRol(rol);
+    }
+
+    public Usuario findByRun(String run) {
+        return usuarioRepository.findByRun(run);
+    }
+
+
+
 }

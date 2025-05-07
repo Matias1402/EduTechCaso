@@ -71,4 +71,24 @@ public class UsuarioController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/rol/{rol}")
+    public ResponseEntity<List<Usuario>> buscarPorRol(@PathVariable String rol){
+        List<Usuario> usuarios = usuarioService.findByRol(rol);
+        if (usuarios.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(usuarios);
+    }
+
+    @GetMapping("/run/{run}")
+    public ResponseEntity<Usuario> buscarPorRun(@PathVariable String run){
+        try {
+            Usuario usuario = usuarioService.findByRun(run);
+            return ResponseEntity.ok(usuario);
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }
