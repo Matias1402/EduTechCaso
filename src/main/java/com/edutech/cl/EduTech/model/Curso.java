@@ -20,7 +20,7 @@ public class Curso {
     private String ISBN;
 
     @Column(nullable = false)
-    private String Nombre_Curso;
+    private String NombreDeCurso;
 
 
 }
