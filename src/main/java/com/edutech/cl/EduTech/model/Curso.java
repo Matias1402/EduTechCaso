@@ -17,7 +17,7 @@ public class Curso {
     private Integer idDelCurso;
 
     @Column(unique = true, nullable = false)
-    private String Isbn;
+    private String ISBN;
 
     @Column(nullable = false)
     private String Nombre_Curso;
