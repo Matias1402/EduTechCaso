@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_curso;
+    private Integer idDecurso;
 
     @Column(unique = true, nullable = false)
     private String Isbn;
