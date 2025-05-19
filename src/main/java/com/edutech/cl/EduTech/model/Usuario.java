@@ -33,10 +33,10 @@ public class Usuario {
     @Column(nullable = false)
     private String correo;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String cursos;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String rol;
 
 
