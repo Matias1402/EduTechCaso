@@ -16,9 +16,6 @@ public class Cursos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCurso;
 
-    @Column(unique = true, nullable = false)
-    private String Isbn;
-
     @Column(nullable = false)
     private String nombreCurso;
 
