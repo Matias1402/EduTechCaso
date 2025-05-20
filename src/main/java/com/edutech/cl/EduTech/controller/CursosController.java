@@ -34,7 +34,7 @@ public class CursosController {
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoCurso);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{idCurso}")
     public ResponseEntity<Cursos> buscar (@PathVariable Integer idCurso){
         try{
             Cursos cursos = cursosService.findById(idCurso);
@@ -43,7 +43,7 @@ public class CursosController {
             return ResponseEntity.notFound().build();
         }
     }
-    @PutMapping("/{id}")
+    @PutMapping("/{idCurso}")
     public ResponseEntity<Cursos> Actualizar(@PathVariable Integer idCurso, @RequestBody Cursos cursos){
         try{
             Cursos cursos1 = cursosService.findById(idCurso);
@@ -56,7 +56,7 @@ public class CursosController {
             return ResponseEntity.notFound().build();
         }
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{idCurso}")
     public ResponseEntity<Cursos> Eliminar(@PathVariable Long idCurso){
         try{
             cursosService.delete(idCurso);
