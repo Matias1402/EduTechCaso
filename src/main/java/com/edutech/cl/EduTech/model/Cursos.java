@@ -19,5 +19,15 @@ public class Cursos {
     @Column(nullable = false)
     private String nombreCurso;
 
+    @Column(nullable = false)
+    private double precioSub;
+
+    @Column(nullable = false)
+    private String duracionCurso;
+
+    @Column(nullable=false)
+    private String cuposDisponibles;
+
+
 
 }
