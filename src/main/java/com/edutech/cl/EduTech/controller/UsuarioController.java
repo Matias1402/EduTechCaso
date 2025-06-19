@@ -24,7 +24,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
-@RequestMapping("/api/v1/usuarios")
+@RequestMapping("/api/v2/usuarios")
 @Tag(name = "Usuarios", description = "API para gestión de usuarios del sistema")
 public class UsuarioController {
 
@@ -48,7 +48,7 @@ public class UsuarioController {
         List<EntityModel<Usuario>> usuarioModels = usuarios.stream()
                 .map(usuario -> EntityModel.of(usuario,
                         linkTo(methodOn(UsuarioController.class).buscar(usuario.getId())).withSelfRel(),
-                        linkTo(methodOn(UsuarioController.class).listar()).withRel("usuarios")))
+                        linkTo(methodOn(UsuarioController.class).listar()).withRel("lISTADO DE TODOS LOS USUARIOS")))
                 .collect(Collectors.toList());
 
         CollectionModel<EntityModel<Usuario>> collectionModel = CollectionModel.of(usuarioModels,
