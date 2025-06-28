@@ -47,7 +47,7 @@ public class UsuarioController {
 
         List<EntityModel<Usuario>> usuarioModels = usuarios.stream()
                 .map(usuario -> EntityModel.of(usuario,
-                        linkTo(methodOn(UsuarioController.class).buscar(usuario.getId())).withSelfRel(),
+                        linkTo(methodOn(UsuarioController.class).buscar(usuario.getIdUsuario())).withSelfRel(),
                         linkTo(methodOn(UsuarioController.class).listar()).withRel("lISTADO DE TODOS LOS USUARIOS")))
                 .collect(Collectors.toList());
 
@@ -69,7 +69,7 @@ public class UsuarioController {
         Usuario nuevoUsuario = usuarioService.save(usuario);
 
         EntityModel<Usuario> model = EntityModel.of(nuevoUsuario,
-                linkTo(methodOn(UsuarioController.class).buscar(nuevoUsuario.getId())).withSelfRel(),
+                linkTo(methodOn(UsuarioController.class).buscar(nuevoUsuario.getIdUsuario())).withSelfRel(),
                 linkTo(methodOn(UsuarioController.class).listar()).withRel("usuarios"));
 
         return ResponseEntity
@@ -172,7 +172,7 @@ public class UsuarioController {
 
         List<EntityModel<Usuario>> usuarioModels = usuarios.stream()
                 .map(usuario -> EntityModel.of(usuario,
-                        linkTo(methodOn(UsuarioController.class).buscar(usuario.getId())).withSelfRel(),
+                        linkTo(methodOn(UsuarioController.class).buscar(usuario.getIdUsuario())).withSelfRel(),
                         linkTo(methodOn(UsuarioController.class).listar()).withRel("usuarios")))
                 .collect(Collectors.toList());
 
@@ -198,7 +198,7 @@ public class UsuarioController {
 
             EntityModel<Usuario> model = EntityModel.of(usuario,
                     linkTo(methodOn(UsuarioController.class).buscarPorRun(run)).withSelfRel(),
-                    linkTo(methodOn(UsuarioController.class).buscar(usuario.getId())).withRel("usuario-by-id"),
+                    linkTo(methodOn(UsuarioController.class).buscar(usuario.getIdUsuario())).withRel("usuario-by-id"),
                     linkTo(methodOn(UsuarioController.class).listar()).withRel("usuarios"));
 
             return ResponseEntity.ok(model);

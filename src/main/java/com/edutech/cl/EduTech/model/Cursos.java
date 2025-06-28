@@ -26,7 +26,7 @@ public class Cursos {
     private String duracionCurso;
 
     @Column(nullable=false)
-    private String cuposDisponibles;
+    private Integer cuposDisponibles;
 
 
 
