@@ -25,6 +25,15 @@ public class CursosService {
     }
 
     public Cursos save(Cursos cursos) {
+        if (cursos.getNombreCurso() == null || cursos.getNombreCurso().trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre del curso es obligatorio");
+        }
+        if (cursos.getPrecioSub() < 0) {
+            throw new IllegalArgumentException("El precio no puede ser negativo");
+        }
+        if (cursos.getCuposDisponibles() < 0) {
+            throw new IllegalArgumentException("Los cupos no pueden ser negativos");
+        }
         return cursosRepository.save(cursos);
     }
 
